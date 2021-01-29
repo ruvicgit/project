@@ -6,5 +6,6 @@ COPY snmp_notifier  /bin/snmp_notifier
 COPY description-template.tpl  /etc/snmp_notifier/description-template.tpl
 
 EXPOSE      9464
+RUN chmod +x /bin/snmp_notifier
 ENTRYPOINT  [ "/bin/snmp_notifier" ]
 CMD ["--snmp.trap-description-template=/etc/snmp_notifier/description-template.tpl"]
